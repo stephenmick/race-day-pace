@@ -633,7 +633,12 @@
 
         // one checkpoint can be missed by 30 minutes
         if (utcAsThoOnRaceDay > utcCheckpointCutoffInSeconds) {
-            document.getElementById('results').innerHTML = "The next checkpoint, <text class=\"bold\">" + nextCheckpoint.name + "</text>, closed at <text class=\"bold\">" + nextCheckpoint.closingTime + "</text>. *But you may miss one checkpoint by 30 minutes.";
+            let closingText = "*But you may miss one of the first four checkpoints by 30 minutes.";
+            if (nextCheckpoint.name === "Finish! Smicksburgh Farm"){
+                closingText = "";
+            }
+
+            document.getElementById('results').innerHTML = "The next checkpoint, <text class=\"bold\">" + nextCheckpoint.name + "</text>, closed at <text class=\"bold\">" + nextCheckpoint.closingTime + "</text>. " + closingText;
         }
         else {
             document.getElementById('results').innerHTML = ("<text class=\"bold\">" + roundedPace + "</text> minutes / mile <br><br>pace to reach<br>" + nextCheckpoint.name + "<br>by <text class=\"bold\">" + nextCheckpoint.closingTime + "</text>");
