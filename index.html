@@ -12,7 +12,7 @@
     <div class="parent-container">
         <div class="child-container titles">
             <h1 class="heading shadow">Race Day Pace</h1>
-            <h3 class="sub-heading shadow-2">Baker Trail Ultra 50-mile</h3>
+            <h3 class="sub-heading shadow-2">2021 Baker Trail Ultra 50-mile</h3>
         </div>
 
         <br>
@@ -152,12 +152,14 @@
                 <div class="mile-div input-div">
                     <div class="to-right">
                         <label for="number">Miles:&nbsp;</label>
-                        <input class="mile-input" type="number" id="mile" value=0 max=50.3 min=0 onClick="stopProp(event)">
+                        <input class="mile-input" type="number" id="mile" value=0 max=50.3 min=0
+                            onClick="stopProp(event)">
                         &nbsp;
                     </div>
                     <div class="to-left">
                         &nbsp;
-                        <button id="as11" class="mile-button" type="button" onClick="checkpointCheck(event, 11)">Get Pace</button>
+                        <button id="as11" class="mile-button" type="button" onClick="checkpointCheck(event, 11)">Get
+                            Pace</button>
                     </div>
                 </div>
                 <div class="aid-details"></div>
@@ -227,7 +229,7 @@
     .aid-station-button {
         border-radius: 5px;
         width: 100%;
-        background-image: linear-gradient(to right, cornflowerblue, aquamarine, beige, beige, beige, beige, beige, aquamarine, cornflowerblue);
+        background-image: linear-gradient(to right, cornflowerblue, aquamarine, beige, beige, beige, beige, aquamarine, cornflowerblue);
     }
 
     .chkpt {
@@ -244,19 +246,6 @@
         display: flex;
         justify-content: center;
     }
-
-    @media (hover:hover) {
-
-        .aid-station-button:hover {
-            background-image: linear-gradient(to right, cornflowerblue, aquamarine, beige, aquamarine, cornflowerblue);
-        }
-
-        .mile-button:hover {
-            background-image: linear-gradient(to right, cornflowerblue, aquamarine, beige, aquamarine, cornflowerblue);
-        }
-
-    }
-
 
     .mile-input {
         width: 50px;
@@ -336,11 +325,11 @@
     }
 
     .shadow {
-        text-shadow: 2px 2px 4px aquamarine;
+        text-shadow: 0px 0px 4px aquamarine;
     }
 
     .shadow-2 {
-        text-shadow: 2px 2px 4px black;
+        text-shadow: 0px 0px 4px black;
     }
 
     .status {
@@ -386,6 +375,22 @@
 
     .top-gap {
         margin-top: 10px;
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        @media (hover:hover) {
+
+            .aid-station-button:hover {
+                background-image: linear-gradient(to right, cornflowerblue, aquamarine, aquamarine, aquamarine, aquamarine, aquamarine, aquamarine, cornflowerblue);
+                box-shadow: 0px 0px 6px black;
+            }
+
+            .mile-button:hover {
+                background-image: linear-gradient(to right, cornflowerblue, aquamarine, aquamarine, aquamarine, aquamarine, aquamarine, aquamarine, cornflowerblue);
+                box-shadow: 0px 0px 6px black;
+            }
+        }
     }
 </style>
 
@@ -522,28 +527,28 @@
                 cutoffUTC: 1630194300
             },
             ten: {
-                name: 'Finish! Smicksburgh Farm',
+                name: 'Finish! Smicksburg Farm',
                 mileMarker: 50.3,
                 isCheckpoint: true,
                 closingTime: '8:30 PM',
                 cutoffUTC: 1630197000
             }
         }
-        
+
         // array of aid station keys
         const aidStationList = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
 
         let aidStationNumber = aidStationNumberInput;
         let isCustomInput = (aidStationNumber === 11);
-        
+
         // if input miles get the next closest aid station
         if (isCustomInput) {
-            aidStationNumber = 0; 
+            aidStationNumber = 0;
             inputMiles = document.getElementById('mile').valueAsNumber;
             console.log("custom input miles: " + inputMiles);
 
             // if 50.3 miles or more then the race is finished
-            if (inputMiles >= 50.3){
+            if (inputMiles >= 50.3) {
                 finishRace(event);
                 return;
             }
@@ -555,8 +560,8 @@
             console.log(lastAidStationPassed);
             let nextAidMiles = lastAidStationPassed.mileMarker;
             const lastAidBeforeFinish = aidStationList.length - 1;
-            while ((nextAidMiles < inputMiles) && (nextAidCustom < lastAidBeforeFinish)){
-                nextAidCustomInput= aidStationList[nextAidCustom];
+            while ((nextAidMiles < inputMiles) && (nextAidCustom < lastAidBeforeFinish)) {
+                nextAidCustomInput = aidStationList[nextAidCustom];
                 console.log(nextAidCustomInput);
                 lastAidStationPassed = aidStation[nextAidCustomInput];
                 console.log(lastAidStationPassed);
@@ -576,7 +581,7 @@
         console.log(thisMileMarker);
 
         // update custom input box if not a custom input
-        if (!isCustomInput){
+        if (!isCustomInput) {
             document.getElementById('mile').value = thisMileMarker;
         }
 
@@ -633,8 +638,8 @@
 
         // one checkpoint can be missed by 30 minutes
         if (utcAsThoOnRaceDay > utcCheckpointCutoffInSeconds) {
-            let closingText = "*But you may miss one of the first four checkpoints by 30 minutes.";
-            if (nextCheckpoint.name === "Finish! Smicksburgh Farm"){
+            let closingText = "*But you may miss one of the first 3 checkpoints by 30 minutes.";
+            if (nextCheckpoint.name === "Finish! Smicksburg Farm" || nextCheckpoint.name === "Rossmoyne Road") {
                 closingText = "";
             }
 
@@ -653,7 +658,7 @@
             showResultBox('status', 'on-click-result', 1);
             // console.log("Not Custom Input");  
         }
-        
+
         setFooter(4);
         if (aidStationNumber === 0) {
             clearText('avg-pace');
