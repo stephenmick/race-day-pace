@@ -12,7 +12,7 @@
     <div class="parent-container">
         <div class="child-container titles">
             <h1 class="heading shadow">Race Day Pace</h1>
-            <h3 class="sub-heading shadow-2">2021 Baker Trail Ultra 50-mile</h3>
+            <h3 class="sub-heading shadow-2">2021 Rock N'The Knob 26.41 mi</h3>
         </div>
 
         <br>
@@ -22,13 +22,13 @@
             <div class="aid-div">
                 <div class="text-div bold">AS#</div>
                 <div class="input-div"></div>
-                <div class="aid-details bold" font-weight="bold">&nbsp;Close</div>
+                <div class="aid-details bold" font-weight="bold">&nbsp;Cutoff</div>
             </div>
             <!-- Chart Info -->
             <div class="aid-div">
                 <div class="text-div"></div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as0" type="submit" value="Start at Summerville"
+                    <input class="aid-station-button" id="as0" type="submit" value="Start"
                         onClick="checkpointCheck(event, 0)">
                 </div>
                 <div class="aid-details ad0">
@@ -39,54 +39,54 @@
             <div class="aid-div">
                 <div class="text-div">1</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as1" type="submit" value="Zion Road (6.2)"
+                    <input class="aid-station-button" id="as1" type="submit" value="Pavia Road (7.2)"
                         onClick="checkpointCheck(event, 1)">
                 </div>
-                <div class="aid-details ad1">
-                    <text>&nbsp;&nbsp;8:15a</text>
+                <div class="aid-details chkpt ad1">
+                    <text>&nbsp;&nbsp;10:15a</text>
                 </div>
             </div>
 
             <div class="aid-div">
                 <div class="text-div">2</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as2" type="submit" value="North Freedom (10.3)"
+                    <input class="aid-station-button" id="as2" type="submit" value="Chappelle's Field (11.2)"
                         onClick="checkpointCheck(event, 2)">
                 </div>
                 <div class="aid-details ad2">
-                    <text class="chkpt">&nbsp;&nbsp;9:30a</text>
+                    <text class="chkpt">&nbsp;&nbsp;11:35a</text>
                 </div>
             </div>
 
             <div class="aid-div">
                 <div class="text-div">3</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as3" type="submit" value="Route 839 (16.0)"
+                    <input class="aid-station-button" id="as3" type="submit" value="Raven's Rest (13.4)"
                         onClick="checkpointCheck(event, 3)">
                 </div>
                 <div class="aid-details ad3">
-                    <text>&nbsp;&nbsp;11:00a</text>
+                    <text>&nbsp;&nbsp;</text>
                 </div>
             </div>
 
             <div class="aid-div">
                 <div class="text-div">4</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as4" type="submit" value="Mahoning Dam (22.2)"
+                    <input class="aid-station-button" id="as4" type="submit" value="Heaven's Hair Pin (17.2)"
                         onClick="checkpointCheck(event, 4)">
                 </div>
                 <div class="aid-details ad4">
-                    <text class="chkpt">&nbsp;&nbsp;12:45p</text>
+                    <text class="chkpt">&nbsp;&nbsp;1:40p</text>
                 </div>
             </div>
 
             <div class="aid-div">
                 <div class="text-div">5</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as5" type="submit" value="Milton Church (28.3)"
+                    <input class="aid-station-button" id="as5" type="submit" value="Quitters Row (20)"
                         onClick="checkpointCheck(event, 5)">
                 </div>
-                <div class="aid-details ad5">
+                <div class="aid-details chkpt ad5">
                     <text>&nbsp;&nbsp;2:30p</text>
                 </div>
             </div>
@@ -94,26 +94,26 @@
             <div class="aid-div">
                 <div class="text-div">6</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as6" type="submit" value="Dayton-Smicksburgh Rd (33.3)"
+                    <input class="aid-station-button" id="as6" type="submit" value="Throat Punch Hill (23.7)"
                         onClick="checkpointCheck(event, 6)">
                 </div>
                 <div class="aid-details ad6">
-                    <text class="chkpt">&nbsp;&nbsp;4:00p</text>
+                    <text class="chkpt">&nbsp;&nbsp;</text>
                 </div>
             </div>
 
             <div class="aid-div">
                 <div class="text-div">7</div>
                 <div class="input-div">
-                    <input class="aid-station-button" id="as7" type="submit" value="Wilson Road (37.4)"
-                        onClick="checkpointCheck(event, 7)">
+                    <input class="aid-station-button" id="as7" type="submit" value="FINISH (26.41)"
+                        onClick="finishRace(event)">
                 </div>
-                <div class="aid-details ad7">
+                <div class="aid-details chkpt ad7">
                     <text>&nbsp;&nbsp;5:00p</text>
                 </div>
             </div>
 
-            <div class="aid-div">
+            <!-- <div class="aid-div">
                 <div class="text-div">8</div>
                 <div class="input-div">
                     <input class="aid-station-button" id="as8" type="submit" value="Rossmoyne Road (42.2)"
@@ -144,7 +144,7 @@
                 <div class="aid-details ad10">
                     <text class="chkpt">&nbsp;&nbsp;8:30p</text>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Box to enter mileage -->
             <div class="aid-div top-gap">
@@ -192,15 +192,15 @@
             <br><br>
             <div class="aid-div">
                 <!-- <div class="text-div"></div> -->
-                <div id="info" class="foot-top">
-                    <p><small>time calculations based on a 6:30 AM start time</small></p>
+                <div id="footer" class="foot-top foot-margin-top-8">
+                    <p><small>time calculations based on an 8:00 AM start time</small></p>
                 </div>
                 <!-- <div class="aid-details"></div> -->
             </div>
             <br>
             <div class="aid-div">
                 <!-- <div class="text-div"></div> -->
-                <div id="footer" class="foot foot-margin-top-8">
+                <div id="info" class="foot">
                     <p><small>crafted for the amazing trail community<br> by Stephen Mick &copy;2021</small></p>
                 </div>
                 <!-- <div class="aid-details"></div> -->
@@ -413,13 +413,23 @@
 
 
 <script>
+    //import addDays from 'date-fns/utc/addDays'
+    //var addDays = require('date-fns/addDays');
 
     function getCurrentTime() {
         const currentUnixTimeSeconds = Math.floor(Date.now()) / 1000;
-        console.log("Current Time: " + currentUnixTimeSeconds);
+        console.log("Current Time: " + currentUnixTimeSeconds);      
+    }
+
+    // adds one day to the current time
+    function getTomorrow() {
+        const tomorrow = addDays((Math.floor(Date.now()) / 1000), 1);
+        console.log("Time Tomorrow: " + tomorrow);
+        return tomorrow;    
     }
 
     // returns utc time adjustment in seconds between current input day and race day
+    // not currently using an input day, so this function is not called
     function adjustDay() {
         let dateSelection = document.querySelector('input[type="date"]');
         let dateAdjustment = 1630108800000 - dateSelection.valueAsNumber;
@@ -430,7 +440,7 @@
     // adjustment to add or subtract to the current time to make it as if it was race day
     function adjustDayInSeconds(currentTimeInSeconds) {
         console.log("current time in seconds: " + currentTimeInSeconds);
-        const midnightRaceDayUTCLocalTime = 1630123200;
+        const midnightRaceDayUTCLocalTime = 1631937600;
         let secondsInADay = 86400;
         const midnightDayAfterRaceDayUTCLocalTime = midnightRaceDayUTCLocalTime + secondsInADay;
         // add or subtract 86400 seconds until 1630123200 which is epoch timestamp on race day
@@ -457,7 +467,7 @@
     // input hours behind GMT
     // output the seconds UTC at the beginning of race day
     function midnightRaceDay(hours) {
-        return 1630108800 + (3600 * hours); // 08-28-2021 midnight UTC GMT and then add four hours for EST
+        return 1631923200 + (3600 * hours); // 09-18-2021 midnight UTC GMT and then add four hours for EST
     }
 
     function checkpointCheck(event, aidStationNumberInput) {
@@ -470,89 +480,68 @@
         // aid stations
         const aidStation = {
             zero: {
-                name: 'Summerville',
+                name: 'Start',
                 mileMarker: 0,
                 milesDelta: 0,
                 isCheckpoint: false,
-                closingTime: '6:30AM',
-                cutoffUTC: 1630146600
+                closingTime: '8:00 AM',
+                cutoffUTC: 1631966400
             },
             one: {
-                name: 'Zion Road',
-                mileMarker: 6.2,
-                milesDelta: 6.2,
-                isCheckpoint: false,
-                closingTime: '8:15 AM',
-                cutoffUTC: 1630152900
+                name: 'Pavia Road',
+                mileMarker: 7.2,
+                milesDelta: 7.2,
+                isCheckpoint: true,
+                closingTime: '10:15 AM',
+                cutoffUTC: 1631974500
             },
             two: {
-                name: 'North Freedom',
-                mileMarker: 10.3,
-                milesDelta: 4.1, // TODO add delta miles?
+                name: 'Chappelle\'s Field',
+                mileMarker: 11.2,
+                milesDelta: 4,
                 isCheckpoint: true,
-                closingTime: '9:30 AM',
-                cutoffUTC: 1630157400
+                closingTime: '11:35 AM',
+                cutoffUTC: 1631979300
             },
             three: {
-                name: 'Route 839',
-                mileMarker: 16,
+                name: 'Raven\'s Rest',
+                mileMarker: 13.4,
                 isCheckpoint: false,
-                closingTime: '11:00 AM',
-                cutoffUTC: 1630162800
+                closingTime: '',
+                cutoffUTC: 0
             },
             four: {
-                name: 'Mahoning Dam',
-                mileMarker: 22.2,
+                name: 'Heaven\'s Hair Pin',
+                mileMarker: 17.2,
                 isCheckpoint: true,
-                closingTime: '12:45 PM',
-                cutoffUTC: 1630169100
+                closingTime: '1:40 PM',
+                cutoffUTC: 1631986800
             },
             five: {
-                name: 'Milton Church',
-                mileMarker: 28.3,
-                isCheckpoint: false,
+                name: 'Quitters Row',
+                mileMarker: 20,
+                isCheckpoint: true,
                 closingTime: '2:30 PM',
-                cutoffUTC: 1630175400
+                cutoffUTC: 1631989800
             },
             six: {
-                name: 'Dayton-Smicksburg Road',
-                mileMarker: 33.3,
-                isCheckpoint: true,
-                closingTime: '4:00 PM',
-                cutoffUTC: 1630180800
+                name: 'Throat Punch Hill',
+                mileMarker: 23.7,
+                isCheckpoint: false,
+                closingTime: '',
+                cutoffUTC: 0
             },
             seven: {
-                name: 'Wilson Road',
-                mileMarker: 37.4,
-                isCheckpoint: false,
+                name: 'FINISH!',
+                mileMarker: 26.41,
+                isCheckpoint: true,
                 closingTime: '5:00 PM',
-                cutoffUTC: 1630184400
-            },
-            eight: {
-                name: 'Rossmoyne Road',
-                mileMarker: 42.2,
-                isCheckpoint: true,
-                closingTime: '6:30 PM',
-                cutoffUTC: 1630189800
-            },
-            nine: {
-                name: 'Griffith Road',
-                mileMarker: 46.7,
-                isCheckpoint: false,
-                closingTime: '7:45 PM',
-                cutoffUTC: 1630194300
-            },
-            ten: {
-                name: 'Finish! Smicksburg Farm',
-                mileMarker: 50.3,
-                isCheckpoint: true,
-                closingTime: '8:30 PM',
-                cutoffUTC: 1630197000
+                cutoffUTC: 1631998800
             }
         }
 
         // array of aid station keys
-        const aidStationList = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+        const aidStationList = ["zero", "one", "two", "three", "four", "five", "six", "seven"];
 
         let aidStationNumber = aidStationNumberInput;
         let isCustomInput = (aidStationNumber === 11);
@@ -563,8 +552,8 @@
             inputMiles = document.getElementById('mile').valueAsNumber;
             console.log("custom input miles: " + inputMiles);
 
-            // if 50.3 miles or more then the race is finished
-            if (inputMiles >= 50.3) {
+            // if 26.41 miles or more then the race is finished
+            if (inputMiles >= 26.41) {
                 finishRace(event);
                 return;
             }
@@ -654,10 +643,10 @@
 
         // one checkpoint can be missed by 30 minutes
         if (utcAsThoOnRaceDay > utcCheckpointCutoffInSeconds) {
-            let closingText = "*But you may miss one of the first 3 checkpoints by 30 minutes.";
-            if (nextCheckpoint.name === "Finish! Smicksburg Farm" || nextCheckpoint.name === "Rossmoyne Road") {
-                closingText = "";
-            }
+            let closingText = "";
+            // if (nextCheckpoint.name === "Finish! Smicksburg Farm" || nextCheckpoint.name === "Rossmoyne Road") {
+                //closingText = "";
+            //}
 
             document.getElementById('results').innerHTML = "The next checkpoint, <text class=\"bold\">" + nextCheckpoint.name + "</text>, closed at <text class=\"bold\">" + nextCheckpoint.closingTime + "</text>. " + closingText;
         }
@@ -680,8 +669,8 @@
             clearText('avg-pace');
             removeResultBox('avg-pace-box');
         }
-        // find current average pace for race start at 6:30 AM which is 1630146600
-        let currentAveragePace = (((utcAsThoOnRaceDay - 1630146600) / 60) / thisMileMarker).toFixed(2);
+        // find current average pace for race start at 8:00 AM which is 1631966400
+        let currentAveragePace = (((utcAsThoOnRaceDay - 1631966400) / 60) / thisMileMarker).toFixed(2);
         console.log("current average pace: " + currentAveragePace + " min / mi");
         // display average pace if a positive number and not at the start
         if (currentAveragePace > 0 && aidStationNumber > 0) {
@@ -720,8 +709,8 @@
         clearResults();
         clearSelections();
         document.getElementById('results').innerHTML = "<br><br><text class=\"bold\">Finished!</text>";
-        showSelection(10);
-        document.getElementById("as10").classList.add("on-click");
+        showSelection(7);
+        document.getElementById("as7").classList.add("on-click");
         showResultBox('status', 'on-click-result', 2);
         setFooter(4);
     }
@@ -738,7 +727,7 @@
 
     // helper function to clear the button selection on-click changes
     function clearSelections() {
-        for (i = 0; i <= 11; i++) {
+        for (i = 0; i <= 7; i++) {
             let element = "as" + i.toString();
             document.getElementById(element).classList.remove("on-click");
         }
